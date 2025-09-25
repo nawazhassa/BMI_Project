@@ -4,10 +4,10 @@ public class model {
     int img;
     String Title ,Discription;
 
-    public model(int img, String title, String discription) {
+    public model(int img, String Title, String Discription) {
         this.img = img;
-        Title = title;
-        Discription = discription;
+        this.Title = Title;
+        this.Discription = Discription;
     }
 
     public int getImg() {
