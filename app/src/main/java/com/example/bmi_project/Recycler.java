@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class Recycler extends AppCompatActivity {
     RecyclerView recycler;
    FloatingActionButton btnFloat;
-
+    ItemAdapter itemAdapter;
     ArrayList<model> arrayList = new ArrayList<>();
 
     @Override
@@ -60,17 +60,24 @@ public class Recycler extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         String name = txtName.getText().toString();
-                        String email = txtName.getText().toString();
+                        String email = txtEmail.getText().toString();
 
 
                         if (name.isEmpty() || email.isEmpty()){
                             Toast.makeText(Recycler.this, "Enter the Name and Email First! ", Toast.LENGTH_SHORT).show();
 
                         }
+                        else {
+                            model model = new model(name ,email);
+                            arrayList.add(model);
+                            itemAdapter.notifyItemInserted(arrayList.size()-1);
+                            recycler.scrollToPosition(arrayList.size()-1);
+                            dialog.dismiss();
+
+                        }
 
 
-                        model model = new model(name ,email);
-                        arrayList.add(model);
+
 
 
 
@@ -145,7 +152,7 @@ public class Recycler extends AppCompatActivity {
         arrayList.add(new model(R.drawable.ic_launcher_foreground, "hasahhnbfhdbfh hbfiudshfudsd fjhdbfd hf duf u 9s hfiif fbd", "nawaz46546"));
 
 
-        ItemAdapter itemAdapter = new ItemAdapter(this, arrayList);
+        itemAdapter = new ItemAdapter(this, arrayList);
 
 
         recycler.setAdapter(itemAdapter);
