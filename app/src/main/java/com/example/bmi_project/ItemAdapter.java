@@ -1,8 +1,10 @@
 package com.example.bmi_project;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.media.RouteListingPreference;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,10 +55,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 dialog.show();
 
                 if (dialog.getWindow() != null) {
-                    dialog.getWindow().setLayout(
-                            ViewGroup.LayoutParams.MATCH_PARENT,
-                            ViewGroup.LayoutParams.WRAP_CONTENT
-                    );
+                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                 }
 
 
@@ -95,17 +94,57 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
                     }
                 });
-
-
             }
         });
+
+
+        holder.linearL.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                        .setTitle("Delete Context! ")
+                        .setMessage("Are tou sure want to Delete?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                itemList.remove(position);
+                                notifyItemRemoved(position);
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.show();
+                return true;
+            }
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
 
     @Override
     public int getItemCount() {
-        return itemList.toArray().length;
+        return itemList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
