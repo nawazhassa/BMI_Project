@@ -10,6 +10,11 @@ public class model {
         this.Discription = Discription;
     }
 
+    public model(String title, String discription) {
+        Title = title;
+        Discription = discription;
+    }
+
     public int getImg() {
         return img;
     }
