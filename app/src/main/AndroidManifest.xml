@@ -12,22 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BMI_Project">
         <activity
-            android:name=".Recycler"
+            android:name=".RoomDb.RoomDB"
             android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity
+            android:name=".Recycler"
+            android:exported="true"/>
+
         <activity
             android:name=".List.ListTesting"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Animation.AnimationActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true" />

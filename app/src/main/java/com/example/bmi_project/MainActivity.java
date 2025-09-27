@@ -63,5 +63,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+        final notesClickListner notesClickListner = new notesClickListner() {
+            @Override
+            public void onClick(int a) {
+
+            }
+
+            @Override
+            public void onLongClick(int b) {
+
+            }
+        };
+
     }
 }
