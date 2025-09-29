@@ -68,29 +68,20 @@ public class RoomDB extends AppCompatActivity {
     }
 
 
-
-
-      /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setNavigationBarColor(
-                    ContextCompat.getColor(this, R.color.color_primary)
-            );
-        }*/
-
-
-private class mainThread extends Thread {
-    public void run() {
-        super.run();
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "database-name").build();
-        UserDao userDao = db.userDao();
-        userDao.deleteAll();
-        userDao.insertAll(new User("Hasan", "Nawaz"), new User("Hasan", "Nawaz"), new User("Hasan", "Nawaz"));
+    private class mainThread extends Thread {
+        public void run() {
+            super.run();
+            AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                    AppDatabase.class, "database-name").build();
+            UserDao userDao = db.userDao();
+            userDao.deleteAll();
+            userDao.insertAll(new User("Hasan", "Nawaz"), new User("Hasan", "Nawaz"), new User("Hasan", "Nawaz"));
 //            userDao.deleteById(1);
 
 
-    }
+        }
 
-}
+    }
 
 }
 
