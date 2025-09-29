@@ -1,7 +1,41 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <!--<style name="Base.Theme.BMI_Project" parent="Theme.Material3.DayNight.NoActionBar">
+        &lt;!&ndash; Customize your dark theme here. &ndash;&gt;
+        &lt;!&ndash; <item name="colorPrimary">@color/my_dark_primary</item> &ndash;&gt;
+    </style>-->
+   <!-- <style name="Theme.BMI_Project" parent="Theme.Material3.DayNight.NoActionBar">
+&lt;!&ndash;        <item name="colorPrimary">#1980D3</item>&ndash;&gt;
+        &lt;!&ndash; Customize your light theme here. &ndash;&gt;
+        &lt;!&ndash;         <item name="colorPrimary">@color/my_light_primary</item>&ndash;&gt;
+    </style>-->
+
+   <!-- <style name="Base.Theme.BMI_Projectt" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#1980D3</item>
+        &lt;!&ndash; Customize your light theme here. &ndash;&gt;
+        &lt;!&ndash;         <item name="colorPrimary">@color/my_light_primary</item>&ndash;&gt;
+    </style>-->
+
+    <!--<style name="Base.Theme.BMI_Project" parent="Theme.Material3.DayNight.NoActionBar">
+        &lt;!&ndash; Customize your light theme here. &ndash;&gt;
+        &lt;!&ndash; <item name="colorPrimary">@color/my_light_primary</item> &ndash;&gt;
+    </style>-->
+
+
+
     <style name="Base.Theme.BMI_Project" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Status bar -->
+        <item name="android:statusBarColor">#9C27B0</item>
+        <!-- Navigation bar -->
+        <item name="android:navigationBarColor">#4CAF50</item>
+        <!-- Toolbar background -->
+        <item name="colorPrimary">#009688</item>
+        <!-- For dark mode, white icons -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
     </style>
+
+
+
 </resources>
+

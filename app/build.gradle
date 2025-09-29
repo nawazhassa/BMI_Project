@@ -31,12 +31,12 @@ android {
 dependencies {
 // https://mvnrepository.com/artifact/com.opencsv/opencsv
 
-    implementation "androidx.room:room-runtime:2.8.1"
-    annotationProcessor("androidx.room:room-compiler:2.8.1")
+    implementation libs.room.runtime
+    annotationProcessor(libs.room.compiler)
 
 
 
-    implementation("com.opencsv:opencsv:5.12.0")
+    implementation(libs.opencsv)
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity

@@ -2,9 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="Overweight">#3265A8</color>
+    <color name="Overweight">#1980D3</color>
     <color name="Underweight">#3F51B5</color>
     <color name="Healty">#32A89B</color>
+
+
+
+    <color name="color_primary">#1980D3</color> <!-- Light Blue -->
+    <color name="color_primary_container">#BBDEFB</color>
+
 
         
         
