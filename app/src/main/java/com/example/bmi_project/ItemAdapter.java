@@ -39,7 +39,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         model item = itemList.get(position);
         holder.text1.setText(item.getTitle());
         holder.text2.setText(item.getDiscription());
@@ -101,6 +101,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         holder.linearL.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                int currentPos = holder.getAdapterPosition();
+                if (currentPos != RecyclerView.NO_POSITION) {
+                    itemList.remove(currentPos);
+                    notifyItemRemoved(currentPos);
+                }
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(context)
                         .setTitle("Delete Context! ")
                         .setMessage("Are tou sure want to Delete?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -108,6 +114,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                             public void onClick(DialogInterface dialog, int which) {
                                 itemList.remove(position);
                                 notifyItemRemoved(position);
+                                notifyItemRangeChanged(position, itemList.size());
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {

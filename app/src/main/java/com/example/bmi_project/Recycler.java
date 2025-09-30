@@ -4,12 +4,15 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +28,8 @@ public class Recycler extends AppCompatActivity {
     ItemAdapter itemAdapter;
     ArrayList<model> arrayList = new ArrayList<>();
 
+    Toolbar toolbarr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,12 @@ public class Recycler extends AppCompatActivity {
         recycler = findViewById(R.id.recyclerV);
         recycler.setLayoutManager(new LinearLayoutManager(this));
         btnFloat = findViewById(R.id.btnFloat);
+        toolbarr =  findViewById(R.id.toolbarr);
+
+        setSupportActionBar(toolbarr);
+
+        Window Window = getWindow();
+        Window.setStatusBarColor(ContextCompat.getColor(this, R.color.color_primary));
 
         btnFloat.setOnClickListener(new View.OnClickListener() {
 

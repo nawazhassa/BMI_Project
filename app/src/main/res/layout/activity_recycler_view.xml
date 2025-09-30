@@ -6,11 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".Recycler">
 
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/apppbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        >
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_primary"
+            app:title="@string/app_name"
+
+            />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/btnFloat" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/apppbar"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnFloat"
