@@ -18,6 +18,8 @@ import androidx.room.Room;
 
 import com.example.bmi_project.R;
 
+import java.util.Objects;
+
 public class RoomDB extends AppCompatActivity {
 
     @SuppressLint("ResourceType")
@@ -32,10 +34,10 @@ public class RoomDB extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbarr);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setTint(ContextCompat.getColor(this, R.color.white));
         getSupportActionBar().setTitle("adkjnfugd");
-        getSupportActionBar().setSubtitle("adv");
+//        getSupportActionBar().setSubtitle("adv");
 
 
         // Enable back button (arrow)
